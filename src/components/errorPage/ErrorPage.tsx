@@ -1,9 +1,10 @@
 import { useRouteError } from "react-router-dom";
 
-interface ErrorPageProps {}
+interface ErrorPageProps {
+}
 
 const ErrorPage: React.FC<ErrorPageProps> = () => {
-    const error= useRouteError();
+    const error:any= useRouteError();
 
     return (
         <div id="error-page" className="flex flex-col items-center justify-center min-h-screen bg-gray-100">

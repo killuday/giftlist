@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
     createBrowserRouter,
@@ -10,6 +9,7 @@ import Root from "./routes/root.tsx";
 import {Provider} from "react-redux";
 import store from "../src/app/store.ts";
 import StepForm from "./components/Stepform/StepForm.tsx";
+import Products from "./components/products/Products.tsx";
 
 
 const router = createBrowserRouter([
@@ -22,6 +22,11 @@ const router = createBrowserRouter([
                 path: "",
                 element: <StepForm/>,
             },
+            {
+                path: "/products",
+                element: <Products/>,
+            },
+
 
         ],
 

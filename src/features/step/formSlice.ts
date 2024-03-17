@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {RootState} from "../../app/store.ts";
 
 interface FormState {
     step: number;
@@ -9,8 +10,8 @@ interface FormState {
     occasion: string;
     giftType: number | null;
     currency:string;
-    spendAmount: string;
-    country: string;
+    spendAmount: number|null;
+    country: number | null;
 }
 
 const initialState: FormState = {
@@ -22,8 +23,8 @@ const initialState: FormState = {
     occasion: "",
     giftType:null,
     currency:"",
-    spendAmount: "",
-    country: ""
+    spendAmount: null,
+    country: null
 };
 
 const formSlice = createSlice({
@@ -37,7 +38,7 @@ const formSlice = createSlice({
             state.interests = action.payload.interests;
             state.step = state.step + 1;
         },
-        addGiftDetailsData: (state, action: PayloadAction<{ occasion: string; giftType: number;currency:string; spendAmount: string; country: string }>) => {
+        addGiftDetailsData: (state, action: PayloadAction<{ occasion: string; giftType: number;currency:string; spendAmount: number; country: number }>) => {
             state.occasion = action.payload.occasion;
             state.giftType = action.payload.giftType;
             state.currency = action.payload.currency;
@@ -52,7 +53,7 @@ const formSlice = createSlice({
         },
     }
 });
-export function getCurrentStep(state) {
+export function getCurrentStep(state:RootState) {
     return state.form.step;
 }
 export const {

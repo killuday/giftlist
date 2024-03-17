@@ -37,23 +37,27 @@ export default function Footer() {
                                     ))}
                             </ul>
                         </div>
-                        <div>
-                            <h3 className="text-xl font-semibold">Help</h3>
-                            <ul className="mt-4 space-y-2">
-                                {footerLinksData[1]?.help &&
-                                    footerLinksData[1].help.map((item) => (
-                                        <li key={item.id}>
-                                            <Link className="hover:text-gray-300 text-[15px] font-normal" to="#">
-                                                {item.title}
-                                            </Link>
-                                        </li>
-                                    ))}
-                            </ul>
+                        <div className='flex justify-start sm:justify-end'>
+                            <div>
+                                <h3 className="text-xl font-semibold">Help</h3>
+                                <ul className="mt-4 space-y-2">
+                                    {footerLinksData[1]?.help &&
+                                        footerLinksData[1].help.map((item) => (
+                                            <li key={item.id}>
+                                                <Link className="hover:text-gray-300 text-[15px] font-normal" to="#">
+                                                    {item.title}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
-                    <div className="flex flex-col items-end">
-                        <Button variant='ghost' className='w-[50%]'>Log in</Button>
-                        <Button variant='secondary' className='w-[50%] mt-2'>Sign Up</Button>
+
+                    <div className="flex flex-col items-start sm:items-end">
+                        <Button variant='ghost' className='w-full sm:w-[50%]'>Log in</Button>
+                        <Button variant='secondary' className='w-full sm:w-[50%] mt-2'>Sign Up</Button>
                     </div>
                 </div>
             </div>

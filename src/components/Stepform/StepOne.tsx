@@ -1,12 +1,16 @@
 import {Input} from "../ui/input.tsx";
-import {RadioGroupItem, RadioGroup} from "../ui/radio-group";
-import {Label} from '../ui/label.tsx';
 import {Textarea} from "../ui/textarea";
 import {Button} from "../ui/button";
 import {useDispatch, useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
-import {addPersonalInfoData, getCurrentStep, prevStep} from "../../features/step/formSlice.ts";
-
+import {addPersonalInfoData, getCurrentStep} from "../../features/step/formSlice.ts";
+import {RootState} from "../../app/store.ts";
+interface formData {
+    buyingFor: string;
+    age: string;
+    gender: string;
+    interests: string;
+}
 export function StepOne() {
     const dispatch = useDispatch();
     const step = useSelector(getCurrentStep);
@@ -15,7 +19,7 @@ export function StepOne() {
         age,
         gender,
         interests,
-    } = useSelector((state) => state.form);
+    } = useSelector((state: RootState) => state.form);
 
     const {
         register,
@@ -26,17 +30,20 @@ export function StepOne() {
         defaultValues: {buyingFor, age, gender, interests},
     });
 
-    function handleNext(data) {
+    function handleNext(data:formData) {
         dispatch(addPersonalInfoData(data));
     }
 
-    const genderdis = watch('gender');
+    const selectedGender = watch('gender');
 
 
     return (
-
+        <div className='max-w-2xl mx-auto my-8 p-6 bg-white rounded-lg text-center'>
+            <div className='flex items-center justify-center'>
+                <img src='/images/gift.png' className='h-[100px] w-[100px]' alt='gift'/>
+            </div>
         <form onSubmit={handleSubmit(handleNext)} className="">
-            <h1 className="text-[36px] font-semibold my-4">Tell us about your gift recipient</h1>
+            <h1 className="sm:text-[36px] text-[20px] font-semibold my-4">Tell us about your gift recipient</h1>
             <div className='max-w-lg mx-auto'>
                 <div className="mb-4 ">
                     <label className="block text-[15px] font-medium text-left  mb-2" htmlFor="recipient">
@@ -63,7 +70,7 @@ export function StepOne() {
 
                         <label
                             htmlFor="male"
-                            className={` ${genderdis === 'male' ? "border-lightBlue font-semibold" : "border-[#E8ECF1] bg-[#FAFBFD] text-[#5E6577]"} inline-block flex-1 justify-center cont cursor-pointer px-4 py-2 rounded-lg border text-sm text-gray-700 hover:border-gray-500 hover:text-gray-900`}
+                            className={` ${selectedGender === 'male' ? "border-lightBlue font-semibold" : "border-[#E8ECF1] bg-[#FAFBFD] text-[#5E6577]"} inline-block flex-1 justify-center cont cursor-pointer px-4 py-2 rounded-lg border text-sm text-gray-700 hover:border-gray-500 hover:text-gray-900`}
                         >
                             <input
                                 id="male"
@@ -79,7 +86,7 @@ export function StepOne() {
                         </label>
                         <label
                             htmlFor="female"
-                            className={` ${genderdis === 'female' ? "border-lightBlue font-semibold" : "border-[#E8ECF1] bg-[#FAFBFD] text-[#5E6577]"} inline-block flex-1 justify-center cont cursor-pointer px-4 py-2 rounded-lg border text-sm text-gray-700 hover:border-gray-500 hover:text-gray-900`}
+                            className={` ${selectedGender === 'female' ? "border-lightBlue font-semibold" : "border-[#E8ECF1] bg-[#FAFBFD] text-[#5E6577]"} inline-block flex-1 justify-center cont cursor-pointer px-4 py-2 rounded-lg border text-sm text-gray-700 hover:border-gray-500 hover:text-gray-900`}
                         >
                             <input
                                 id="female"
@@ -94,7 +101,7 @@ export function StepOne() {
                         </label>
                         <label
                             htmlFor="other"
-                            className={` ${genderdis === 'other' ? "border-lightBlue font-semibold" : "border-[#E8ECF1] bg-[#FAFBFD] text-[#5E6577]"} inline-block flex-1 justify-center cont cursor-pointer px-4 py-2 rounded-lg border text-sm text-gray-700 hover:border-gray-500 hover:text-gray-900`}
+                            className={` ${selectedGender === 'other' ? "border-lightBlue font-semibold" : "border-[#E8ECF1] bg-[#FAFBFD] text-[#5E6577]"} inline-block flex-1 justify-center cont cursor-pointer px-4 py-2 rounded-lg border text-sm text-gray-700 hover:border-gray-500 hover:text-gray-900`}
 
                         >
                             <input
@@ -133,5 +140,6 @@ export function StepOne() {
                 </div>
             </div>
         </form>
+        </div>
     )
 }

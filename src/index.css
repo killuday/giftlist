@@ -64,3 +64,6 @@ body{
     border-radius: 50%;
     background: white;
 }
+/*.swiper-button-next::after, .swiper-button-prev::after {*/
+/*    content: "" !important;*/
+/*}*/
