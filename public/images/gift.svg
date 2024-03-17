@@ -1,0 +1,32 @@
+<svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="7.40039" y="24.0723" width="94" height="83.9274"/>
+<mask id="mask0_0_1426" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="7" y="24" width="95" height="84">
+<rect x="7.40039" y="24.0723" width="94" height="83.9274"/>
+</mask>
+<g mask="url(#mask0_0_1426)">
+<g style="mix-blend-mode:color">
+<rect x="1.4043" y="-5.08984" width="106.055" height="120.058" rx="53.0276" fill="#50BCD9"/>
+</g>
+</g>
+<rect x="21.1816" y="21.8379" width="66.8422" height="82.091"/>
+<mask id="mask1_0_1426" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="21" y="21" width="68" height="83">
+<rect x="21.1816" y="21.8379" width="66.8422" height="82.091"/>
+</mask>
+<g mask="url(#mask1_0_1426)">
+<g style="mix-blend-mode:color">
+<rect x="1.40625" y="-5.0918" width="106.055" height="120.058" rx="53.0276" fill="#50BCD9"/>
+</g>
+</g>
+<rect x="24.3848" width="60.4285" height="38.7625"/>
+<mask id="mask2_0_1426" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="24" y="0" width="61" height="39">
+<rect x="24.3848" width="60.4285" height="38.7625"/>
+</mask>
+<g mask="url(#mask2_0_1426)">
+<g style="mix-blend-mode:color">
+<rect x="1.40234" y="-5.09082" width="106.055" height="120.058" rx="53.0276" fill="#50BCD9"/>
+</g>
+</g>
+<g style="mix-blend-mode:color-dodge" opacity="0.5">
+<rect x="7" width="94" height="107.999"/>
+</g>
+</svg>

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: "Poppins",sans-serif;
+}
+.cont {
+    display: flex;
+    position: relative;
+    padding-left: 35px;
+    align-items:center;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cont input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border: 1.5px solid #CAD3DD;
+    border-radius: 50%;
+}
+
+.cont:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.cont input:checked ~ .checkmark {
+    background-color: #50BCD9;
+    border: none !important;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.cont input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.cont .checkmark:after {
+    top: 5px;
+    left: 5px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: white;
+}
