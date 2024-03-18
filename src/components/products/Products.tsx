@@ -72,7 +72,7 @@ function Products() {
                                                             bouquet</h2>
                                                         <Ratings />
                                                         <div className='flex items-center my-3'>
-                                                            <h5 className='border-[#E8ECF1] font-semibold rounded-[4px] px-2 py-1  inline-block bg-[#F5F7FA] text-sm text-[#101A34] border-1px border-solid'>
+                                                            <h5 className='border-[#E8ECF1] priceDiscount relative font-semibold rounded-[4px] px-2 py-1  inline-block bg-[#F5F7FA] text-sm text-[#101A34] border-1px border-solid'>
                                                                 <span className='text-[#A8ACB3]'>$</span>530
                                                             </h5>
                                                             <h5 className='px-2 py-1  text-sm text-[#FF574D] font-bold inline-block'>$250</h5>

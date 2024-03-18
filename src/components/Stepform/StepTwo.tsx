@@ -148,6 +148,7 @@ export function StepTwo() {
                             rules={{required: 'Country is required'}}
                             render={({field: {onChange, value}}) => (
                                 <AsyncSelect
+
                                     styles={{
                                         control: (baseStyles, state) => ({
                                             ...baseStyles,
