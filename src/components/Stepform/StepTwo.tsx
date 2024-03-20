@@ -5,15 +5,15 @@ import {countries, giftData} from "../../assets/staticData/staticData.ts";
 import {addGiftDetailsData, getCurrentStep, prevStep} from "../../features/step/formSlice.ts";
 import {useDispatch, useSelector} from "react-redux";
 import {Controller, useForm} from "react-hook-form";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Loading from "../loader/Loading.tsx";
 import {useNavigate} from "react-router-dom";
 import {RootState} from "../../app/store.ts";
 interface formData {
     occasion: string;
-    giftType: number;
-    spendAmount: number;
-    country: number;
+    giftType: number | null;
+    spendAmount: number | null;
+    country: number | null;
     currency: string;
 }
 export function StepTwo() {
@@ -45,7 +45,7 @@ export function StepTwo() {
         }
     }, [isLoading, navigate]);
 
-    function handlePrev(e:any) {
+    function handlePrev(e: React.SyntheticEvent) {
         e.preventDefault();
         dispatch(prevStep());
     }

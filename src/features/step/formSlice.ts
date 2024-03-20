@@ -38,7 +38,7 @@ const formSlice = createSlice({
             state.interests = action.payload.interests;
             state.step = state.step + 1;
         },
-        addGiftDetailsData: (state, action: PayloadAction<{ occasion: string; giftType: number;currency:string; spendAmount: number; country: number }>) => {
+        addGiftDetailsData: (state, action: PayloadAction<{ occasion: string; giftType: number | null;currency:string; spendAmount: number | null; country: number | null }>) => {
             state.occasion = action.payload.occasion;
             state.giftType = action.payload.giftType;
             state.currency = action.payload.currency;
